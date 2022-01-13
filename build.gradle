@@ -79,42 +79,6 @@ project(':common') {
 
 }
 
-project(':service-msa-cloud') {
-    dependencies {
-        implementation project(':common')
-        implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
-        implementation 'org.springframework.boot:spring-boot-starter-web'
-    }
-}
-
-project(':service-msa-licenses') {
-    dependencies {
-        implementation project(':common')
-        implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
-        implementation 'org.springframework.boot:spring-boot-starter-web'
-    }
-}
-
-//project(':service-discovery-agent') {
-//    dependencies {
-//        implementation project(':common')
-//        implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
-//        implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security'
-//
-//        testImplementation 'org.springframework.boot:spring-boot-starter-test'
-//    }
-//}
-
-//project(':service-config-agent') {
-//    dependencies {
-//        implementation project(':common')
-//        implementation 'org.springframework.cloud:spring-cloud-config-server'
-//        compileOnly 'org.projectlombok:lombok'
-//        annotationProcessor 'org.projectlombok:lombok'
-//        testImplementation 'org.springframework.boot:spring-boot-starter-test'
-//    }
-//}
-
 project(':module-db') {
     dependencies {
         implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
