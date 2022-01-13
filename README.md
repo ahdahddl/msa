@@ -1,7 +1,7 @@
 # msa
 
 
-# Intellij 에서의 Docker build 방법 
+@ Intellij 에서의 Docker build 방법 
     
     - Service 모듈의 build.gralde 에 id "com.google.cloud.tools.jib" version "3.1.4" plug in 을 설정한다.
 
