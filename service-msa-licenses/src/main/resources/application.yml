@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: service-msa-licenses
+
+server:
+  port: 8080
+
+

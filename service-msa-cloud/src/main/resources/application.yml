@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: service-msa-cloud
+
+server:
+  port: 8080
+
+

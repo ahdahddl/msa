@@ -1,0 +1,129 @@
+
+plugins {
+    id 'org.springframework.boot' version '2.6.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    set('springCloudVersion', "2021.0.0")
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+subprojects {
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: 'idea'
+
+    group = 'per.msa'
+    version = '0.0.1-SNAPSHOT'
+    sourceCompatibility = '11'
+
+    repositories {
+        mavenCentral()
+    }
+
+    ext {
+        set('springCloudVersion', "2021.0.0")
+    }
+
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter'
+        compileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+
+    task wrapper(type: Wrapper){
+        gradleVersion = '7.2'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
+
+project(':common') {
+    bootJar {
+        enabled = false
+    }
+    jar {
+        enabled = true
+    }
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter-security'
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+        compileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        testImplementation 'org.springframework.security:spring-security-test'
+    }
+
+}
+
+project(':service-msa-cloud') {
+    dependencies {
+        implementation project(':common')
+        implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+    }
+}
+
+project(':service-msa-licenses') {
+    dependencies {
+        implementation project(':common')
+        implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+    }
+}
+
+//project(':service-discovery-agent') {
+//    dependencies {
+//        implementation project(':common')
+//        implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+//        implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security'
+//
+//        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//    }
+//}
+
+//project(':service-config-agent') {
+//    dependencies {
+//        implementation project(':common')
+//        implementation 'org.springframework.cloud:spring-cloud-config-server'
+//        compileOnly 'org.projectlombok:lombok'
+//        annotationProcessor 'org.projectlombok:lombok'
+//        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//    }
+//}
+
+project(':module-db') {
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+        compileOnly 'org.projectlombok:lombok'
+        runtimeOnly 'com.oracle.database.jdbc:ojdbc8'
+        runtimeOnly 'org.postgresql:postgresql'
+        annotationProcessor 'org.projectlombok:lombok'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    }
+}
+
+

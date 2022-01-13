@@ -1,0 +1,13 @@
+server:
+  port: 8888
+
+spring:
+  config:
+    activate:
+      on-profile: native    #?? ??? ??? ??? ???(?? ???)
+
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: https://www.dropbox.com/sh/z2tnwerxzbbacir/AADRiQ6LFEG9n2hCrx7-pm2Qa?dl=0
