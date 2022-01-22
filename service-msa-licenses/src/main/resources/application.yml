@@ -1,8 +1,13 @@
-spring:
-  application:
-    name: service-msa-licenses
+#spring:
+#  application:
+#    name: service-msa-licenses
+#  profiles:
+#    active: prod
+eureka:
+  client:
+    service-url: http://localhost:8761
 
 server:
-  port: 8080
+  port: 8081
 
 

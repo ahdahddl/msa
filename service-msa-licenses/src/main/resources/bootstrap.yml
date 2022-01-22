@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: servicemsa-licenses
+  cloud:
+    config:
+      uri: http://localhost:8888

@@ -1,3 +1,6 @@
+server:
+  port: 8761
+
 spring:
   application:
     name: service-discovery-agent
@@ -6,13 +9,12 @@ spring:
       name: ldh
       password: ldh
 
-server:
-  port: 8761
-
 eureka:
+  instance:
+    hostname: localhost
   client:
-    register-with-eureka: false
-    fetch-registry: false
-  server:
-    wait-time-in-ms-when-sync-empty: 5
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhosgt:8761/eureka/
 
