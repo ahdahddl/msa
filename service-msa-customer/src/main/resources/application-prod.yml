@@ -1,0 +1,32 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: service-msa-customer
+  security:
+    user:
+      name: ldh
+      password: ldh
+  datasource:
+    username: amigoscode
+    password: password
+    url: jdbc:postgresql://localhost:5432/customer
+  jpa:
+      hibernate:
+        ddl-auto: update
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          format_sql: true
+      show-sql: true
+
+eureka:
+  instance:
+    hostname: localhost
+#  instance:
+#    prefer-ip-address: false
+  client:
+    service-url:
+      defaultZone: http://ldh:ldh@localhost:8761/service-discovery-agent/eureka
+

@@ -7,6 +7,8 @@ include('module-db')
 include('common')
 include('service-msa-cloud')
 include('service-msa-licenses')
+include('service-msa-customer')
 include('service-discovery-agent')
 include('service-config-agent')
+
 

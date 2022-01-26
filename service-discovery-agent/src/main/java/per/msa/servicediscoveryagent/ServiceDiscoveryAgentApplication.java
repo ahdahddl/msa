@@ -11,7 +11,7 @@ public class ServiceDiscoveryAgentApplication {
 
     public static void main(String[] args) {
 //        new SpringApplicationBuilder(ServiceDiscoveryAgentApplication.class).web(true).run(args);
-//        SpringApplication.run(ServiceDiscoveryAgentApplication.class, args);
+        SpringApplication.run(ServiceDiscoveryAgentApplication.class, args);
     }
 
 }

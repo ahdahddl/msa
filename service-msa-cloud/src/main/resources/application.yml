@@ -1,22 +1,22 @@
 server:
-  port: 8082
+  port: 8080
 
 spring:
   application:
     name: service-msa-cloud
-  profiles:
-    active: default
+#  profiles:
+#    active: default
   security:
     user:
       name: ldh
       password: ldh
 
 eureka:
+  instance:
+    hostname: localhost
 #  instance:
 #    prefer-ip-address: false
   client:
-    register-with-eureka: true
-    fetch-registry: true
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://ldh:ldh@localhost:8761/service-discovery-agent/eureka
 
