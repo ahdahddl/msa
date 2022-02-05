@@ -8,6 +8,19 @@ spring:
     user:
       name: ldh
       password: ldh
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: password
+    url: jdbc:postgresql://localhost:5432/customer
+    username: amigoscode
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
 
 eureka:
   instance:
