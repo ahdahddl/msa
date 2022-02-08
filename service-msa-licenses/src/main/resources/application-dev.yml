@@ -2,12 +2,14 @@ server:
   port: 8081
 
 spring:
+#  autoconfigure:
+#    exclude: org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration
   application:
     name: service-msa-licenses
-  security:
-    user:
-      name: ldh
-      password: ldh
+#  security:
+#    user:
+#      name: ldh
+#      password: ldh
   datasource:
     driver-class-name: org.postgresql.Driver
     password: password
