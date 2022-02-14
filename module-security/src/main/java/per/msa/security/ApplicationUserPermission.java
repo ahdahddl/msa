@@ -1,5 +1,8 @@
 package per.msa.security;
 
+import lombok.Getter;
+
+@Getter
 public enum ApplicationUserPermission {
     STUDENT_READ("student:read"),
     STUDENT_WRITE("student:write"),
