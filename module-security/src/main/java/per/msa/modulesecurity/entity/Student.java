@@ -1,4 +1,4 @@
-package per.msa.entity;
+package per.msa.modulesecurity.entity;
 
 import lombok.*;
 

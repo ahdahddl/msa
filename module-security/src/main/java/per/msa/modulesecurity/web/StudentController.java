@@ -1,10 +1,10 @@
-package per.msa.web;
+package per.msa.modulesecurity.web;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import per.msa.entity.Student;
+import per.msa.modulesecurity.entity.Student;
 
 import java.util.Arrays;
 import java.util.List;

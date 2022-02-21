@@ -1,8 +1,8 @@
-package per.msa.web;
+package per.msa.modulesecurity.web;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import per.msa.entity.Student;
+import per.msa.modulesecurity.entity.Student;
 
 import java.util.Arrays;
 import java.util.List;

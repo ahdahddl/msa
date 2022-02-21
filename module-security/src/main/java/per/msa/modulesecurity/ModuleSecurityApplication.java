@@ -1,4 +1,4 @@
-package per.msa;
+package per.msa.modulesecurity;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

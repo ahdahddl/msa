@@ -1,4 +1,4 @@
-package per.msa.security;
+package per.msa.modulesecurity.security;
 
 import lombok.Getter;
 
