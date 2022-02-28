@@ -18,6 +18,8 @@ dependencies {
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.6.3'
     // https://mvn.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.6.3'
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+
 
     // https://mvn.com/artifact/com.google.guava/guava
     implementation group: 'com.google.guava', name: 'guava', version: '31.0.1-jre'
@@ -25,6 +27,12 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.2'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.2',
+            'io.jsonwebtoken:jjwt-jackson:0.11.2' // or 'io.jsonwebtoken:jjwt-gson:0.11.2' for gson
+
 }
 
 tasks.named('test') {
