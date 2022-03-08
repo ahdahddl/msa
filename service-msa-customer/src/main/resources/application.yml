@@ -1,13 +1,13 @@
 server:
-  port: 8082
+  port: 8083
 
 spring:
   application:
     name: service-msa-customer
-  security:
-    user:
-      name: ldh
-      password: ldh
+#  security:
+#    user:
+#      name: ldh
+#      password: ldh
   datasource:
     username: amigoscode
     password: password

@@ -8,8 +8,10 @@ include('module-security')
 include('common')
 include('service-msa-cloud')
 include('service-msa-licenses')
-include('service-msa-customer')
 include('service-discovery-agent')
 include('service-config-agent')
+
+include('service-msa-customer')
+include('service-msa-fraud')
 
 
