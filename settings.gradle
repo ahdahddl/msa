@@ -3,14 +3,17 @@ rootProject.name = 'msa'
 
 include('module-db')
 include('module-security')
-
+include('amqp')
 
 include('common')
-include('service-msa-cloud')
-include('service-msa-licenses')
+
 include('service-discovery-agent')
 include('service-config-agent')
+include('service-msa-clients')
+include('service-msa-notification')
 
+include('service-msa-cloud')
+include('service-msa-licenses')
 include('service-msa-customer')
 include('service-msa-fraud')
 

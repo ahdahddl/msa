@@ -1,0 +1,43 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: service-msa-notification
+  #  security:
+  #    user:
+  #      name: ldh
+  #      password: ldh
+  datasource:
+    username: amigoscode
+    password: password
+    url: jdbc:postgresql://localhost:5432/notification
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+  zipkin:
+    base-url: http://localhost:9411
+  rabbitmq:
+    addresses: localhost:5672
+
+eureka:
+  instance:
+    hostname: localhost
+  #  instance:
+  #    prefer-ip-address: false
+  client:
+    service-url:
+      defaultZone: http://ldh:ldh@localhost:8761/service-discovery-agent/eureka
+
+rabbitmq:
+  exchanges:
+    internal: internal.exchange
+  queue:
+    notification: notification.queue
+  routing-keys:
+    internal-notification: internal.notification.routing-key

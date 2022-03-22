@@ -13,11 +13,18 @@ ext {
     set('springCloudVersion', "2021.0.0")
 }
 
+bootJar {
+    enabled = false
+}
+jar {
+    enabled = true
+}
+
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter:2.6.2'
+    implementation 'org.springframework.boot:spring-boot-starter:2.6.4'
     compileOnly 'org.projectlombok:lombok:1.18.22'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.6.2'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.6.4'
 }
 
 subprojects {
@@ -40,10 +47,10 @@ subprojects {
     }
 
     dependencies {
-        implementation 'org.springframework.boot:spring-boot-starter:2.6.3'
+        implementation 'org.springframework.boot:spring-boot-starter:2.6.4'
         compileOnly 'org.projectlombok:lombok'
         annotationProcessor 'org.projectlombok:lombok'
-        testImplementation 'org.springframework.boot:spring-boot-starter-test:2.6.2'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test:2.6.4'
     }
 
     dependencyManagement {
@@ -85,10 +92,11 @@ project(':module-db') {
 //        runtimeOnly 'com.oracle.database.jdbc:ojdbc8'
 //        runtimeOnly 'org.postgresql:postgresql'
         compileOnly 'org.projectlombok:lombok'
-
         annotationProcessor 'org.projectlombok:lombok'
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
     }
 }
+
+
 
 

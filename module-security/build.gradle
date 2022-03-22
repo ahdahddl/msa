@@ -15,14 +15,14 @@ ext {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.6.3'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.6.4'
     // https://mvn.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf
-    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.6.3'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.6.4'
     annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
 
 
     // https://mvn.com/artifact/com.google.guava/guava
-    implementation group: 'com.google.guava', name: 'guava', version: '31.0.1-jre'
+    implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
@@ -35,6 +35,6 @@ dependencies {
 
 }
 
-tasks.named('test') {
+test {
     useJUnitPlatform()
 }
