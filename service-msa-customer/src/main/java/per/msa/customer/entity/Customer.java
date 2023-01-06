@@ -12,7 +12,7 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @Builder
 @AllArgsConstructor
-@Entity
+@Entity(name = "Customer")
 public class Customer {
     @Id
     @SequenceGenerator(
@@ -23,10 +23,42 @@ public class Customer {
             strategy = GenerationType.SEQUENCE,
             generator = "customer_id_sequence"
     )
-    private Integer id;
+    @Column(
+            name = "id",
+            updatable = false
+    )
+    private Long id;
+
+    @Column(
+            name = "firstName",
+            nullable = false,
+            columnDefinition = "TEXT"
+    )
     private String firstName;
+
+    @Column(
+            name = "lastName",
+            nullable = false,
+            columnDefinition = "TEXT"
+    )
     private String lastName;
+
+    @Column(
+            name = "email",
+            nullable = false,
+            columnDefinition = "TEXT",
+            unique = true
+    )
     private String email;
+
+    @Column(
+            name = "age",
+            nullable = false,
+            columnDefinition = "TEXT",
+            unique = true
+    )
+    private Integer age;
+
 
     @Override
     public boolean equals(Object o) {

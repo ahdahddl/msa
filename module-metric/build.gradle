@@ -1,0 +1,41 @@
+
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'idea'
+    id "com.google.cloud.tools.jib" version "3.1.4"
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    set('springCloudVersion', "2021.0.0")
+}
+
+bootJar {
+    enabled = false
+}
+jar {
+    enabled = true
+}
+
+group = 'per.msa'
+version = '1.0'
+
+dependencies {
+    implementation project(':common')
+
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    // https://mvnrepository.com/artifact/io.micrometer/micrometer-tracing-bridge-brave
+    implementation group: 'io.micrometer', name: 'micrometer-tracing-bridge-brave', version: '1.0.0'
+
+    implementation 'io.zipkin.reporter2:zipkin-reporter-brave'
+    // https://mvnrepository.com/artifact/io.micrometer/micrometer-registry-prometheus
+    implementation group: 'io.micrometer', name: 'micrometer-registry-prometheus', version: '1.10.2'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+}
+

@@ -3,6 +3,7 @@ rootProject.name = 'msa'
 
 include('module-db')
 include('module-security')
+include('module-metric')
 include('amqp')
 
 include('common')

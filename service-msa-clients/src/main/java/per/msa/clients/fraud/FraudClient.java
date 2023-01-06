@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface FraudClient {
 
     @GetMapping(path = "msa/v1/fraud-check/{customerId}")
-    FraudCheckResponse isFraudster(@PathVariable("customerId") Integer customerId);
+    FraudCheckResponse isFraudster(@PathVariable("customerId") Long customerId);
 
 }
